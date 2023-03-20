@@ -2,6 +2,7 @@
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 import Body from "./components/Body.vue";
+import axios from "axios";
 
 </script>
 
