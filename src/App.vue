@@ -3,6 +3,6 @@
 </script>
 
 <template>
-<h1>Hey</h1>
+<h1 class="text-7xl">Hey</h1>
 </template>
 
