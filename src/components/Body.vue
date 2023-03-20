@@ -26,22 +26,29 @@ const onSearch = async () => {
 
 <template>
     <div class=" flex flex-col grow w-screen p-2 items-center gap-y-3">
-        <div class="w-screen flex justify-center gap-x-3 pl-4 pr-4 ">
-            <input type="text" placeholder="Enter image topic" class="input input-bordered input-primary w-full max-w-xs"
-                v-model="searchInput" />
-            <button @click="onSearch" class="btn btn-primary">Search</button>
+        <div class="form-control">
+            <div class="input-group">
+                <input type="text" placeholder="Enter Image Topic" class="input input-bordered md:w-80 input-primary" v-model="searchInput"/>
+                <button @click="onSearch" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </div>
         </div>
         <div v-if="isLoading" class="flex flex-col grow justify-center items-center gap-y-5 w-screen p-2">
             <Spinner />
         </div>
         <div v-else-if="hasValue" class="flex flex-col grow justify-center items-center gap-y-5 w-screen p-2">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-                <img v-for="image in images" :src="image.urls.regular" class="object-cover h-64 md:h-80 w-full" alt="pictures">
+                <img v-for="image in images" :src="image.urls.regular" class="object-cover h-64 md:h-80 w-full"
+                    alt="pictures">
             </div>
         </div>
         <div v-else class="flex flex-col grow justify-center items-center gap-y-5 w-screen p-2">
             <p class="text-2xl">No images to display</p>
-            <font-awesome-icon icon="fa-images" class="h-32" />
-        </div>
+        <font-awesome-icon icon="fa-images" class="h-32" />
     </div>
-</template>
+</div></template>
