@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import axios from "axios";
-import { ref, onMounted } from "vue";
+import { ref, watchEffect } from "vue";
 import Spinner from "./Spinner.vue";
 
 const images = ref([]);
@@ -8,6 +8,14 @@ const hasValue = ref(false);
 const isLoading = ref(false);
 const searchInput = ref("");
 const API_URL = "https://api.unsplash.com/search/photos"
+
+watchEffect(() => {
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            onSearch();
+        }
+    })
+})
 
 const onSearch = async () => {
     isLoading.value = true;
