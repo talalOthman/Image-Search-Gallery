@@ -3,7 +3,14 @@ import axios from "axios";
 import { ref, watchEffect } from "vue";
 import Spinner from "./Spinner.vue";
 
-const images = ref([]);
+interface Image {
+    id: string;
+    urls: {
+        regular: string;
+    }
+}
+
+const images = ref<Image[]>([]);
 const hasValue = ref(false);
 const isLoading = ref(false);
 const searchInput = ref("");
