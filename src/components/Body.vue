@@ -11,9 +11,9 @@ interface Image {
 }
 
 const images = ref<Image[]>([]);
-const hasValue = ref(false);
-const isLoading = ref(false);
-const searchInput = ref("");
+const hasValue = ref<boolean>(false);
+const isLoading = ref<boolean>(false);
+const searchInput = ref<string>("");
 const API_URL = "https://api.unsplash.com/search/photos"
 
 watchEffect(() => {
@@ -43,7 +43,8 @@ const onSearch = async () => {
     <div class="flex flex-col w-screen p-3 items-center gap-y-3">
         <div class="form-control pt-3">
             <div class="input-group">
-                <input type="text" placeholder="Enter Image Topic" class="input input-bordered md:w-80 input-primary" v-model="searchInput"/>
+                <input type="text" placeholder="Enter Image Topic" class="input input-bordered md:w-80 input-primary"
+                    v-model="searchInput" />
                 <button @click="onSearch" class="btn btn-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -64,6 +65,7 @@ const onSearch = async () => {
         </div>
         <div v-else class="flex flex-col grow justify-center items-center gap-y-5 w-screen p-2">
             <p class="text-2xl">No images to display</p>
-        <font-awesome-icon icon="fa-images" class="h-32" />
+            <font-awesome-icon icon="fa-images" class="h-32" />
+        </div>
     </div>
-</div></template>
+</template>
