@@ -33,8 +33,8 @@ const onSearch = async () => {
 </script>
 
 <template>
-    <div class=" flex flex-col grow w-screen p-2 items-center gap-y-3">
-        <div class="form-control">
+    <div class="flex flex-col w-screen p-3 items-center gap-y-3">
+        <div class="form-control pt-3">
             <div class="input-group">
                 <input type="text" placeholder="Enter Image Topic" class="input input-bordered md:w-80 input-primary" v-model="searchInput"/>
                 <button @click="onSearch" class="btn btn-primary">

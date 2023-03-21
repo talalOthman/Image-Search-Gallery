@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import Navbar from "./components/Navbar.vue";
+import { RouterLink, RouterView } from 'vue-router'
+import Navbar from "./components/Navbar.vue"
 import Footer from "./components/Footer.vue";
-import Body from "./components/Body.vue";
 
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col items-center gap-y-5 justify-between">
-    <Navbar />
-    <Body />
-    <Footer />
-  </div>
+    <div class="min-h-screen flex flex-col justify-between">
+        <Navbar />
+        <RouterView />
+        <Footer />
+    </div>
 </template>
-
